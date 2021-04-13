@@ -2,7 +2,7 @@
 Task: Introduction of problem setters
 Problem Setter: Zoljargal Gantumur, SteppeLink LLC
 
-## Subtaks
+## Subtask
 (20 points) Subtask 1: Testcase 001-004
 (80 points) Subtask 2: Testcase 005-020
 
