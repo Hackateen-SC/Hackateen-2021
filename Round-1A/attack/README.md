@@ -5,7 +5,7 @@
 ## Limits
 - Time limit: 1s
 - Memory limit: 256mb
-  
+
 ## Subtasks
 - (10 points) Subtask 1: Testcase 00-09
 - (20 points) Subtask 2: Testcase 10-19
