@@ -2,6 +2,10 @@
 - Task: Take toys
 - Problem Setter: Chinbat Ganzorig, SteppeLink LLC
 
+## Limits
+- Time limit: 1s
+- Memory limit: 256mb
+
 ## Subtask
 - (10 points) Subtask 1: Testcase 001-003
 - (10 points) Subtask 2: Testcase 004-006

@@ -2,7 +2,11 @@
 - Task: Ant kingdom
 - Problem Setter: Govikhuu Basan, Infinite Solutions LLC 
 
-## Subtask
+## Limits
+- Time limit: 1s
+- Memory limit: 256mb
+
+## Subtasks
 - (10 points) Subtask 1: Testcase sub11
 - (20 points) Subtask 2: Testcase sub21-sub22
 - (20 points) Subtask 3: Testcase sub31-sub32

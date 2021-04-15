@@ -2,7 +2,11 @@
 - Task: Game
 - Problem Setter: Usukhbaatar Dotgonvanchig
 
-## Subtask
+## Limits
+- Time limit: 1s
+- Memory limit: 256mb
+
+## Subtasks
 - (10 points) Subtask 1: Testcase 001-005
 - (90 points) Subtask 2: Testcase 006-012
 
