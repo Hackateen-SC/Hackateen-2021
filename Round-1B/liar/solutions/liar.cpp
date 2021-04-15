@@ -1,4 +1,3 @@
-
 #include <vector>
 #include <string>
 #include <iostream>
@@ -7,36 +6,47 @@
 using namespace std;
 
 int main() {
-	int n; cin >> n;
-	vector<pair<int, char> > a(n + 1);
-	a[0] = make_pair(0, 'G');
-	string s;
-	for (int i = 1; i <= n; i++)
-		cin >> a[i].first;
-	cin >> s;
+    int n;
+    string s;
+    
+    cin >> n;
+    vector <int> tmp(n);
+    for (int i = 0; i < n; i++) {
+        cin >> tmp[i];
+    }
+    cin >> s;
+    
+    vector <pair <int, char> > nums(1, {0, 'G'});
+    for(int i = 0; i < n; i++) {
+        nums.push_back({tmp[i], s[i]});
+    }
 
-	int l = 0, g = 1;
-	for (int i = 1; i <= n; i++) {
-		a[i].second = s[i - 1];
-		if (s[i - 1] == 'G') g++;
-	}
+    sort(nums.begin(), nums.end());
+    
+    nums.push_back({nums.back().first + 2, 'L'});
+    vector <int> great(n+2, 0), low(n+2, 0);
+    
+    for (int i = 1; i < n + 2; i++) {
+        low[i] = low[i-1];
+        if (nums[i].second == 'L') low[i]++;
+    }
+    
+    for (int i = n; i >= 0; i--) {
+        great[i] = great[i+1];
+        if (nums[i].second == 'G') great[i]++;
+    }
+    
+    int ans = INT_MAX, pos = -1;
+    for (int i = 1; i < n + 2; i++) {
+        if (nums[i].first - nums[i-1].first < 2) continue;
+        int curAns = low[i-1] + great[i], curNum = nums[i-1].first+1;
+        if (curAns < ans) {
+            ans = curAns;
+            pos = curNum;
+        }
+    }
 
-	sort(a.begin(), a.end());
+    cout << pos << ' ' << ans << '\n';
 	
-	int x = 0, y = n + 1;
-	for (int i = 0; i <= n; i++) {
-		if (a[i].second == 'G') g--;
-		else l++;
-		if (i == n || a[i].first + 1 != a[i + 1].first) {
-			int temp = l + g;
-			if (temp < y) {
-				y = temp;
-				x = a[i].first + 1;
-			}
-		}
-	}
-
-	cout << x << " " << y << endl;
-
-	return 0;
+    return 0;
 }
